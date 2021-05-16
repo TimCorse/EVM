@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+    </head>
+    <body>
+        
+
+
+    </body>
+</html>
+
+<script>
+
+var arr = []
+for (var i = 0; i <= 100; i++) {
+    arr.push(i)
+}
+
+    function getRandom(min, max) {
+        return Math.floor(Math.random() *
+        (max - min +1)) + min;
+    }
+
+    var table = document.createElement("table");
+    document.body.appendChild(table);
+    table.setAttribute('border', '1');
+    table.setAttribute('border-collapse', 'collapse');
+    table.setAttribute('border', 'solid');
+    
+    
+
+
+
+
+
+     m=10; n=10;
+     for (var i=0; i<m; i++){
+
+        var tr = document.createElement('tr');
+        table.appendChild(tr);
+        for (var j=0; j < n; j++){
+            var td = document.createElement('td');
+            td.innerHTML =
+            arr[ getRandom(0, arr.length-1)];
+            tr.appendChild(td);
+        }
+     }
+     table.id = "mytable";
+     function colorTD(sssr){
+         var table = document.getElementById("mytable");
+        var elems =
+              table.getElementsByTagName('td'),
+              length = elems.length;
+              for (i=0; i<length; i++){
+                  if (elems[i].innerHTML == sssr)
+                  elems[i].style.backgroundColor = 
+                  '#c41e3a';
+              }
+    return false;
+     }
+
+
+     window.onload = function() {
+         var button = 
+         document.createElement('input');
+         button.type = "button";
+         button.value = "покрасить";
+         button.addEventListener(
+             "click", function() {
+                colorTD("4"),
+                colorTD("41"),
+                colorTD("42"),
+                colorTD("43"),
+                colorTD("44"),
+                colorTD("45"),
+                colorTD("46"),
+                colorTD("47"),
+                colorTD("48"),
+                colorTD("49")
+             });
+             document.body.appendChild(button);
+     }
+</script>
